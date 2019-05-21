@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import io from 'socket.io-client';
 
-const socket = io('http://211.51.76.18:8082');
+const socket = io('http://211.51.76.18:3000');
 
 
 
