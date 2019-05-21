@@ -32,9 +32,11 @@ export default {
   },
   created() {
     const $ths = this;
-    this.$socket.on("chat", data => {
-      this.pushMsgData(data);
-      $ths.datas.push(data);
+    this.$socket.on("message", data => {
+      console.log(data.message);
+      
+      this.pushMsgData(data.message);
+      $ths.datas.push(data.message);
     });
   },
   methods: {
@@ -43,14 +45,14 @@ export default {
     }),
     sendMessage(msg) {
       this.pushMsgData({
-        from: {
-          name: '나'
-        },
+        // from: {
+        //   name: '나'
+        // },
         msg
       });
       this.$sendMessage({
         // name: this.$route.params.username,
-        name: this.uid,
+        // name: this.uid,
         msg
       });
     },

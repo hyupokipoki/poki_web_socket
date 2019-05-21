@@ -2,8 +2,8 @@
   <div v-auto-bottom="msgs">
     <transition-group name="list" >
       <div v-for="(msg,index) in msgs" v-bind:key="index">
-            <span>{{msg.from.name}}</span>
-            <span>{{msg.msg}}</span>
+            <!-- <span>{{msg.from.name}}</span> -->
+            <span>{{msg.message}}</span>
       </div>
     </transition-group>
   </div>
