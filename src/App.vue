@@ -43,7 +43,12 @@ export default {
   display: flex;
   justify-content: center;
   height: 100%;
-  background-color: rgb(126, 128, 150);
+  /* background-color: rgb(126, 128, 150); */
+    background: url('http://static1.squarespace.com/static/564ca233e4b00450715bc065/564ca9cde4b00715f8651c8c/5823157637c58182f78b6fe3/1496230230602/bot+background+png.png?format=1500w') no-repeat ;
+    min-width: 100%;
+    background-size: cover;
+
+    background-position: center;
 }
 
 .adminapp {

@@ -2,7 +2,9 @@
   <div class="inner-wrap">
     <form id="input-form" @submit.prevent="submitMessageFunc">
       <input v-model="msg" label="chat" placeholder="보낼 메세지를 입력하세요." solo>
-      <button id="inpt-send-btn">전송</button>
+      <button id="input-send-btn">
+        <img src="../../assets/send_btn.png" alt>
+      </button>
     </form>
     <div class="banner">
       <span>Powered by POKI POKI</span>
@@ -30,18 +32,34 @@ export default {
 </script>
 
 <style scoped>
+.inner-wrap {
+  background-color: rgb(248, 235, 230);
+}
+
 #input-form {
   display: flex;
   border-bottom: 1px solid #000;
+  padding: 8px;
+  background-color: beige;
+  border-radius: 10px;
 }
 
 #input-form input {
   flex: 1;
+  border: none;
 }
 
-input:focus,
-button:focus {
-  outline: none;
+#input-send-btn {
+  background: none;
+  border: none;
+}
+
+#input-send-btn img {
+  width: 16px;
+}
+
+#input-send-btn:active {
+  width: 32px;
 }
 
 .banner {

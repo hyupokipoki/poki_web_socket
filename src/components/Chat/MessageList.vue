@@ -1,5 +1,5 @@
 <template>
-  <div v-auto-bottom="msgs">
+  <div class="chat-container" v-auto-bottom="msgs">
     <div class="poki-chat-container">
       <span class="poki-chat">Hi, {{userName}}</span>
     </div>
@@ -10,7 +10,7 @@
           <span class="user-chat">{{msg.message}}</span>
         </div>
         <div class="poki-chat-container" v-if="msg.fromUid == 'poki'">
-          <span class="poki-chat">!!{{msg.message}}</span>
+          <span class="poki-chat">{{msg.message}}</span>
         </div>
       </div>
     </transition-group>
@@ -19,12 +19,17 @@
 
 <script>
 export default {
-  name: 'MessageList',
-  props: ['msgs', "userName"],
+  name: "MessageList",
+  props: ["msgs", "userName"]
 };
 </script>
 
 <style scoped>
+
+.chat-container {
+  background-color: rgb(248, 235, 230)
+}
+
 .list-item {
   display: inline-block;
   margin-right: 10px;
@@ -44,9 +49,32 @@ export default {
   flex-direction: row-reverse;
 }
 
+.poki-chat, .user-chat {
+  padding: 8px;
+  border-radius: 0.4em;
+  position: relative;
+}
+
 .user-chat {
-  padding: 2px;
   margin-right: 8px;
+  background-color: rgb(220, 130, 103);
+  color: white;
+}
+
+
+.user-chat:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-left-color: rgb(220, 130, 103);
+  border-right: 0;
+  border-bottom: 0;
+  margin-top: -5px;
+  margin-right: -10px;
 }
 
 .poki-chat-container {
@@ -56,8 +84,22 @@ export default {
 }
 
 .poki-chat {
-  padding: 2px;
   margin-left: 8px;
-  color: red;
+  background-color: white;
+}
+
+.poki-chat:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-right-color: white;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: -5px;
+  margin-left: -10px;
 }
 </style>

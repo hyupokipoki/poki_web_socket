@@ -69,12 +69,12 @@ export default {
 .inner-wrap {
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .msg-list {
   flex: 1;
-  overflow-x: scroll;
+  overflow-x: hidden;
 }
 
 .msg-form {

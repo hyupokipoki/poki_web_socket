@@ -32,6 +32,8 @@ export default {
       } else {
         if (val.length < 3) {
           errors.push(`${key} filed should have length of 3`);
+        }else if(val === 'poki') {
+          errors.push(`I'm Poki. Please another name`);
         }
       }
       return errors;
