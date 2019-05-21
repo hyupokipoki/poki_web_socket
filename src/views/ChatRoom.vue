@@ -51,8 +51,8 @@ export default {
       // this.pushMsgData(msg);
       this.$sendMessage({
         // name: this.$route.params.username,
-        // name: this.uid,
-        name: this.userName,
+        name: this.uid,
+        // name: this.userName,
         msg: msg
       });
     },
