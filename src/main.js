@@ -7,7 +7,7 @@ import './plugins/socketPlugin'
 import Directives from './plugins/directives';
 import store from './store';
 import './plugins/vuetify';
-import './assets/_common.scss';
+import './assets/_common.css';
 
 Vue.config.productionTip = false
 Vue.use(Directives);

@@ -1,7 +1,7 @@
 <template>
   <div class="inner-wrap">
-      <Message-Title />
-    <Message-List :msgs="msgDatas" class="msg-list"></Message-List>
+    <Message-Title/>
+    <Message-List :userName="userName" :msgs="datas" class="msg-list"></Message-List>
     <Message-Form v-on:submitMessage="sendMessage" class="msg-form"></Message-Form>
   </div>
 </template>
@@ -17,26 +17,29 @@ export default {
   data() {
     return {
       datas: [],
-      uid: this.getRandomId()
+      uid: this.getRandomId(),
+      userName: ""
     };
   },
   components: {
-      "Message-Title": MessageTitle,
+    "Message-Title": MessageTitle,
     "Message-List": MessageList,
     "Message-Form": MessageForm
   },
   computed: {
     ...mapState({
       msgDatas: state => state.socket.msgDatas
-    }),
+    })
   },
   created() {
     const $ths = this;
+    $ths.userName = $ths.$route.params.userName;
     this.$socket.on("message", data => {
       console.log(data.message);
-      
-      this.pushMsgData(data.message);
-      $ths.datas.push(data.message);
+      console.log(data.fromUid);
+
+      // this.pushMsgData(data.message);
+      $ths.datas.push(data);
     });
   },
   methods: {
@@ -44,22 +47,19 @@ export default {
       pushMsgData: Constant.PUSH_MSG_DATA
     }),
     sendMessage(msg) {
-      this.pushMsgData({
-        // from: {
-        //   name: '나'
-        // },
-        msg
-      });
+      // this.datas.push(msg);
+      // this.pushMsgData(msg);
       this.$sendMessage({
         // name: this.$route.params.username,
         // name: this.uid,
-        msg
+        name: this.userName,
+        msg: msg
       });
     },
-    getRandomId: function()  {
-        var randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
-        var uniqid = randLetter + Date.now();
-        return uniqid;
+    getRandomId: function() {
+      var randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+      var uniqid = randLetter + Date.now();
+      return uniqid;
     }
   }
 };

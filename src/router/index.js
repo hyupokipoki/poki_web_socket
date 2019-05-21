@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
+import UserLogin from '../views/UserLogin.vue';
 import ChatRoom from '../views/ChatRoom.vue';
 import DashBoard from '../views/Admin/DashBoard.vue';
 import IntentSetting from '../views/Admin/IntentSetting.vue';
@@ -9,10 +9,14 @@ Vue.use(Router)
 
 export default new Router({
   routes: [{
-      path: '/',
-      name: 'ChatRoom',
-      component: ChatRoom,
-    },
+    path: '/',
+    name: 'UserLogin',
+    component: UserLogin,
+  },{
+    path: '/chat/:userName',
+    name: 'ChatRoom',
+    component: ChatRoom,
+  },
     {
       path: '/admin',
       redirect: '/admin/dashboard',
@@ -28,6 +32,9 @@ export default new Router({
       path: '/admin/intentsetting',
       name: 'AdminIntentSetting',
       component: IntentSetting,
+    },{
+      path: '*',
+      redirect: '/'
     }
   ]
 })
