@@ -53,6 +53,8 @@ export default {
   padding: 8px;
   border-radius: 0.4em;
   position: relative;
+  max-width: 60%;
+  line-height:120%
 }
 
 .user-chat {

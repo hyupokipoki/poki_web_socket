@@ -40,7 +40,7 @@ export default {
   display: flex;
   border-bottom: 1px solid #000;
   padding: 8px;
-  background-color: beige;
+  background-color: white;
   border-radius: 10px;
 }
 
