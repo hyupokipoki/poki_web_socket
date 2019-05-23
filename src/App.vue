@@ -49,6 +49,9 @@ export default {
     background-size: cover;
 
     background-position: center;
+
+      background-color: rgb(254, 242, 204);
+
 }
 
 .adminapp {

@@ -1,5 +1,8 @@
 <template>
   <div class="user-login-container">
+    <div>
+      <img src="../assets/poki.png" alt>
+    </div>
     <form id="input-form" @submit.prevent="submitLogin">
       <input v-model="userName" label="userName" placeholder="닉네임을 입력하세요." solo>
       <button id="inpt-send-btn">로그인</button>
@@ -32,7 +35,7 @@ export default {
       } else {
         if (val.length < 3) {
           errors.push(`${key} filed should have length of 3`);
-        }else if(val === 'poki') {
+        } else if (val === "poki") {
           errors.push(`I'm Poki. Please another name`);
         }
       }
@@ -44,8 +47,25 @@ export default {
 
 <style scoped>
 .user-login-container {
-  margin-top: 25%;
+  /* margin-top: 25%; */
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.user-login-container > div  {
+ margin-bottom: 16px;
+  border-radius: 50%;
+  border: 5px dashed white;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.user-login-container > div > img {
+  width: 200px;
+  height: 200px;
+ 
 }
 
 #input-form {
@@ -54,13 +74,14 @@ export default {
 }
 
 #input-form input {
-  border: 1px solid rgb(219, 219, 219);
+  border: 2px solid rgb(255, 210, 84);
   margin-bottom: 16px;
   padding: 8px;
+  background-color: white;
 }
 
 #input-form button {
-  background-color: rgb(219, 219, 219);
+  background-color: rgb(125, 125, 125);
   color: white;
   padding: 8px;
   margin-bottom: 16px;
@@ -70,9 +91,8 @@ export default {
   color: red;
 }
 
-#input-form input, #input-form button {
-    border-radius: 10px;
+#input-form input,
+#input-form button {
+  border-radius: 10px;
 }
-
-
 </style>
