@@ -54,13 +54,14 @@ export default {
 }
 
 #input-form input {
-  border: 1px solid #ee0;
+  border: 1px solid rgb(219, 219, 219);
   margin-bottom: 16px;
   padding: 8px;
 }
 
 #input-form button {
-  background-color: #ee0;
+  background-color: rgb(219, 219, 219);
+  color: white;
   padding: 8px;
   margin-bottom: 16px;
 }

@@ -12,7 +12,7 @@ export default {
 <style scoped>
 .title-container {
     padding: 16px;
-    background: rgb(220, 130, 103);
+    background: rgb(255, 210, 84);
     height: 60px;
     display: flex;
     align-items: center;
@@ -24,4 +24,5 @@ export default {
     font-weight: bold;
     color: white;
 }
+
 </style>

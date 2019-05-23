@@ -1,7 +1,7 @@
 <template>
   <div class="chat-container" v-auto-bottom="msgs">
     <div class="poki-chat-container">
-      <span class="poki-chat">Hi, {{userName}}</span>
+      <img src="../../assets/poki_bot.png" alt=""><span class="poki-chat">안녕! {{userName}}</span>
     </div>
 
     <transition-group name="list">
@@ -10,7 +10,7 @@
           <span class="user-chat">{{msg.message}}</span>
         </div>
         <div class="poki-chat-container" v-if="msg.fromUid == 'poki'">
-          <span class="poki-chat">{{msg.message}}</span>
+          <img src="../../assets/poki_bot.png" alt=""><span class="poki-chat">{{msg.message}}</span>
         </div>
       </div>
     </transition-group>
@@ -27,7 +27,11 @@ export default {
 <style scoped>
 
 .chat-container {
-  background-color: rgb(248, 235, 230)
+  /* background-color: rgb(248, 235, 230); */
+  background-color: rgb(254, 242, 204);
+
+  border-left: 1px solid rgb(255, 210, 84);
+  border-right: 1px solid rgb(255, 210, 84);
 }
 
 .list-item {
@@ -47,20 +51,21 @@ export default {
   margin-top: 8px;
   display: flex;
   flex-direction: row-reverse;
+  margin-right: 8px;
 }
 
 .poki-chat, .user-chat {
-  padding: 8px;
+  padding: 16px;
   border-radius: 0.4em;
   position: relative;
   max-width: 60%;
-  line-height:120%
+  line-height:120%;
+  /* color: white; */
 }
 
 .user-chat {
   margin-right: 8px;
-  background-color: rgb(220, 130, 103);
-  color: white;
+    background: rgb(255, 210, 84);
 }
 
 
@@ -72,7 +77,7 @@ export default {
   width: 0;
   height: 0;
   border: 10px solid transparent;
-  border-left-color: rgb(220, 130, 103);
+  border-left-color: rgb(255, 210, 84);
   border-right: 0;
   border-bottom: 0;
   margin-top: -5px;
@@ -83,11 +88,24 @@ export default {
   margin-top: 8px;
   display: flex;
   flex-direction: row;
-}
 
+  margin-left: 8px;
+}
+.poki-chat-container img{
+  width: 50px;
+  height: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 8px;
+}
 .poki-chat {
   margin-left: 8px;
-  background-color: white;
+  background-color: rgb(219, 219, 219);
+  /* border-image: url('../../assets/poki-chat.png') 50 fill ;;
+  border-image-width:15px;
+  border-image-outset: 9px;
+  background-size: 100%;
+  background-position: left center; */
 }
 
 .poki-chat:after {
@@ -98,7 +116,7 @@ export default {
   width: 0;
   height: 0;
   border: 10px solid transparent;
-  border-right-color: white;
+  border-right-color: rgb(219, 219, 219);
   border-left: 0;
   border-bottom: 0;
   margin-top: -5px;

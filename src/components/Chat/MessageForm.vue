@@ -33,14 +33,20 @@ export default {
 
 <style scoped>
 .inner-wrap {
-  background-color: rgb(248, 235, 230);
+  background-color: rgb(254, 242, 204);
+  /* background-color: white; */
+
+  border-left: 1px solid rgb(255, 210, 84);
+  border-right: 1px solid rgb(255, 210, 84);
 }
 
 #input-form {
   display: flex;
   border-bottom: 1px solid #000;
   padding: 8px;
-  background-color: white;
+  background-color: rgb(254, 242, 204);
+    background-color: white;
+
   border-radius: 10px;
 }
 
@@ -67,4 +73,5 @@ export default {
   display: flex;
   justify-content: center;
 }
+
 </style>

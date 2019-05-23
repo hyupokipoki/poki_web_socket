@@ -69,6 +69,7 @@ export default {
 .inner-wrap {
   display: flex;
   flex-direction: column;
+
   /* background-color: #fff; */
 }
 
