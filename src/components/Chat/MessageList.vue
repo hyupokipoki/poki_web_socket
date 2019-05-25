@@ -10,7 +10,7 @@
           <span class="user-chat">{{msg.message}}</span>
         </div>
         <div class="poki-chat-container" v-if="msg.fromUid == 'poki'">
-          <img src="../../assets/poki_bot.png" alt=""><span class="poki-chat">{{msg.message}}</span>
+          <img src="../../assets/poki_bot.png" alt=""><span v-html="msg.message" class="poki-chat"></span>
         </div>
       </div>
     </transition-group>
