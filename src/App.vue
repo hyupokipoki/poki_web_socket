@@ -44,14 +44,13 @@ export default {
   justify-content: center;
   height: 100%;
   /* background-color: rgb(126, 128, 150); */
-    background: url('./assets/bg.png') no-repeat ;
+  /* background: url('./assets/bg.png') no-repeat ;
     min-width: 100%;
     background-size: cover;
 
-    background-position: center;
+    background-position: center; */
 
-      background-color: rgb(254, 242, 204);
-
+  background-color: rgb(254, 242, 204);
 }
 
 .adminapp {
