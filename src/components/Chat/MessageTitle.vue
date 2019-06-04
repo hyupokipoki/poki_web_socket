@@ -6,7 +6,7 @@
 
       <div id="myModal" class="modal" :class="{'modal-hidden': !isClicked}">
         <span @click="close" class="close">&times;</span>
-        <img class="modal-content" src="../../assets/logo.png" id="img01">
+        <img class="modal-content" src="../../assets/guide.png" id="img01">
         <div id="caption"></div>
       </div>
     </div>
