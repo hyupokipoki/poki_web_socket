@@ -1,7 +1,7 @@
 <template>
   <div class="chat-container" v-auto-bottom="msgs">
     <div class="poki-chat-container">
-      <img src="../../assets/poki_bot.png" alt=""><span class="poki-chat">안녕! {{userName}}</span>
+      <img src="../../assets/poki_bot.png" alt=""><span class="poki-chat">안녕! {{userName}} <br> 1: 요리 검색<br>2: 재료 검색<br>3: 기타</span>
     </div>
 
     <transition-group name="list">
